@@ -211,7 +211,7 @@ if __name__ == '__main__':
         try:
             admin = User.query.filter_by(username='admin').first()
             if not admin:
-                hashed_password = bcrypt.generate_password_hash('admin123').decode('utf-8')
+                hashed_password = "admin123"
                 admin_user = User(username='admin', password=hashed_password, role='admin')
                 db.session.add(admin_user)
                 db.session.commit()
