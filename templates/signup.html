@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign Up - InventorySys</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      background: #1d1d1e;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #fff;
+    }
+
+    .navbar {
+      background-color: #1d1d1e;
+    }
+
+    .form-container {
+      display: flex;
+      height: 90vh;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .glass-form {
+  background: #3a3939;
+  border-radius: 10px;
+  padding: 2rem 2.5rem;
+  width: 60%;
+  max-width: 420px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #000; /* changed from #fff to black */
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.glass-form h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #ffffff; /* ensure heading is black */
+}
+
+.glass-form input {
+  background: rgb(255, 255, 255);
+  border: none;
+  color: #000; /* changed to black */
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.glass-form input:focus {
+  color: #000; /* keep text black on focus */
+  outline: none;
+}
+
+.glass-form button {
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  color: #000; /* optional: make button text black */
+}
+
+/* Paragraph text */
+.glass-form p {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  color: #ffffff; /* paragraph text black */
+}
+
+    .info-section {
+      text-align: center;
+      color: #ffffff;
+      padding: 1rem;
+    }
+
+    .info-section img {
+      max-width: 100%;
+      border-radius: 0;
+      box-shadow: none;
+      display: block;
+      margin: 0 auto;
+    }
+
+    a {
+      color: #0dcaf0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-dark px-4">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/inventory-flow.png" alt="logo" width="32" height="32" class="me-2" />
+      <span class="fs-4">InventorySys</span>
+    </a>
+  </nav>
+
+  <!-- Main content -->
+  <div class="container-fluid form-container">
+    <div class="row w-100">
+      <!-- Left side with image and description -->
+      <div class="col-md-7 d-none d-md-flex flex-column align-items-center justify-content-center">
+        <div class="info-section">
+          <img src="{{ url_for('static', filename='infinity-256.png') }}" alt="Inventory Image" />
+          <p class="mt-4 fs-1">DevSecOps Project</p>
+        </div>
+      </div>
+
+      <!-- Right side signup form -->
+      <div class="col-md-5">
+        <div class="glass-form mx-auto">
+          <h3 class="text-center mb-4">SIGN UP</h3>
+          <form method="POST">
+            <input type="text" name="username" placeholder="Username" required />
+            <input type="email" name="email" placeholder="Email" required />
+            <input type="password" name="password" placeholder="Password" required />
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required />
+            <button class="btn btn-success w-100" type="submit">Register</button>
+          </form>
+          <p class="text-center mt-3">
+            Already have an account? <a href="{{ url_for('login') }}">Login here</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
